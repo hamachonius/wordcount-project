@@ -1,0 +1,82 @@
+
+<html>
+
+ <head>
+
+ <style>
+
+  h1.title{
+    color: #9057FF;
+    margin: 0 auto;
+    width: 720px;
+    font-size: 40;
+
+  }
+
+ h1.yourtext{
+   margin-left: 100;
+   width: 700px;
+   font-size: 30;
+   color: #A16EFF;
+
+ }
+
+ h1.wordcount{
+   margin-left: 100;
+   width: 700px;
+   font-size: 30;
+   color: #A16EFF;
+ }
+
+ .fulltext {
+     padding: 0.2em 0.5em;
+     margin: 2em 0;
+     color: #565656;
+     background: #EAD9FF;
+     box-shadow: 0px 0px 0px 10px #EAD9FF;
+     border: dashed 2px white;
+     border-radius: 8px;
+     margin-left: 30;
+     margin-right: 30;
+ }
+
+ div.wordcount {
+    margin-left: 300;
+    margin-right: 450;
+    padding: 0.5em 1em;
+
+    border: double 5px #EAD9FF;
+}
+
+ </style>
+
+</head>
+
+
+
+  <h1 class="title">There are {{ count }} words in your text</h1>
+
+</br>
+<a href="{% url 'home' %}">Start Again</a>
+</br>
+
+
+  <h1 class="yourtext">Your Text</h1>
+
+  <div class="fulltext">
+  {{ fulltext }}
+  </div>
+
+
+
+
+  <h1 class="wordcount">Word Count</h1>
+
+  <div class="wordcount">
+   {% for word, counttotal in sortedwords %}
+
+   {{ word }} : {{ counttotal }}
+  <br/>
+ {% endfor %}
+</div>
+</html>

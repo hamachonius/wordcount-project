@@ -1,0 +1,40 @@
+
+<!DOCTYPE html>
+{% load static %}
+<html>
+<head>
+  <meta charset="utf-8">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Cherry+Swash:700">
+  {% block extrahead %}
+     <link href="{% static 'home.css' %}" rel="stylesheet">
+   {% endblock %}
+
+   <style>
+     h1{
+       margin: 0 auto;
+       width: 500px;
+       color: #A16EFF;
+     }
+     form{
+       margin: 0 auto;
+       width: 500px;
+     }
+     textarea{
+
+     }
+   </style>
+</head>
+
+
+
+
+<body>
+<a href="{% url 'about' %}">about</a>
+<h1>Word Count</h1>
+<form action="{% url 'count' %}">
+  <textarea name="fulltext" rows="15" cols="90"></textarea>
+  <br/>
+  <input type="submit" value="Count!"/>
+</form>
+</body>
+</html>
